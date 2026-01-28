@@ -93,3 +93,11 @@ Evidence is organized to be audit-ready, not retroactively assembled.
 - Are privileged roles protected by MFA?
 - Are access reviews completed and documented on schedule?
 
+## Where This Applies in Real Environments
+
+These patterns map directly to environments using:
+- Okta, Azure AD, or Entra ID for identity management
+- Jira or ServiceNow for access requests and approvals
+- SIEM tools for log aggregation and audit evidence
+- SOC 2, ISO 27001, SOX, and internal security audits
+
