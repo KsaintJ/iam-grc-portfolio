@@ -12,3 +12,5 @@ Diagrams are intentionally simplified to demonstrate governance logic and contro
 - **Access Review Workflow**  
   `access-review-flow.md` — Quarterly access review process with evidence retention
 
+- **RBAC Provisioning Flow**: `rbac-provisioning-flow.md`
+
