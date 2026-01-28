@@ -32,3 +32,7 @@ documentation.
 - ISO 27001
 - Least Privilege
 - Audit Readiness
+
+## Audit Evidence Example
+A sample walkthrough of how IAM controls and supporting documentation would be presented during an audit.  
+**Folder:** `audit-evidence/`
