@@ -36,3 +36,7 @@ documentation.
 ## Audit Evidence Example
 A sample walkthrough of how IAM controls and supporting documentation would be presented during an audit.  
 **Folder:** `audit-evidence/`
+
+## Diagrams
+High-level visuals illustrating IAM lifecycle and governance flows.  
+**Folder:** `diagrams/`
