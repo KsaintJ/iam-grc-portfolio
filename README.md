@@ -1,4 +1,5 @@
 # IAM / GRC Portfolio
+> This repository demonstrates how I design, document, and validate IAM controls the same way they are reviewed in real audits and security assessments.
 
 Job-ready IAM/GRC portfolio demonstrating practical access governance,
 identity lifecycle controls, and SSO/MFA implementation with audit-ready
