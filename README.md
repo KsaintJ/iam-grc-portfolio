@@ -1,3 +1,12 @@
+## Start Here
+
+If you have 5 minutes:
+- 🔐 **Access Reviews & RBAC:** `/access-reviews-rbac`
+- 🔄 **JML Lifecycle Controls:** `/jml-lifecycle-controls`
+- 🔑 **SSO / MFA Governance:** `/sso-mfa-runbook`
+
+These sections reflect how IAM controls are reviewed in real audits.
+
 # IAM / GRC Portfolio
 > This repository demonstrates how I design, document, and validate IAM controls the same way they are reviewed in real audits and security assessments.
 
