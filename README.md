@@ -1,3 +1,17 @@
+# IAM / GRC Portfolio
+
+## Portfolio Summary
+
+**Created by:** Kender Saint-Juste  
+**Background:** B.S. Information Science (Information Security Concentration) | University of South Florida '23  
+**Certifications:** Security+ (In Progress, Exam: March 2026) | ISC2 CC (planned)  
+**Current Role:** Security Operations Support @ TeamViewer  
+**Tools & Frameworks (conceptual & governance-focused):** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
+
+This portfolio demonstrates hands-on IAM/GRC program design using frameworks and methodologies aligned with enterprise identity governance and compliance requirements.
+
+---
+
 ## Start Here
 
 If you have 5 minutes:
@@ -7,12 +21,15 @@ If you have 5 minutes:
 
 These sections reflect how IAM controls are reviewed in real audits.
 
-# IAM / GRC Portfolio
+---
+
 > This repository demonstrates how I design, document, and validate IAM controls the same way they are reviewed in real audits and security assessments.
 
 Job-ready IAM/GRC portfolio demonstrating practical access governance,
 identity lifecycle controls, and SSO/MFA implementation with audit-ready
 documentation.
+
+---
 
 ## Projects
 
@@ -37,21 +54,37 @@ documentation.
 - Break-glass access handling
 - Logging and audit readiness
 
+---
+
+## Sample Diagram: JML Lifecycle Flow
+
+![JML Lifecycle](diagrams/jml-lifecycle-flow.png)
+
+*Shows automated provisioning, approval workflows, and audit checkpoints for Joiner/Mover/Leaver events.*
+
+---
+
 ## Framework Alignment
 - SOC 2
 - ISO 27001
 - Least Privilege
 - Audit Readiness
 
+---
+
 ## Audit Evidence Example
 A sample walkthrough of how IAM controls and supporting documentation would be presented during an audit.  
 **Folder:** `audit-evidence/`
+
+---
 
 ## Diagrams
 High-level visuals illustrating IAM lifecycle and governance flows.  
 **Folder:** `diagrams/`
 
-## How I’d Walk an Auditor or Security Lead Through This (2–3 Minutes)
+---
+
+## How I'd Walk an Auditor or Security Lead Through This (2–3 Minutes)
 
 **1. Start with control objectives**
 The goal of this IAM program is to ensure:
@@ -102,6 +135,8 @@ Evidence is organized to be audit-ready, not retroactively assembled.
 - Are privileged roles protected by MFA?
 - Are access reviews completed and documented on schedule?
 
+---
+
 ## Where This Applies in Real Environments
 
 These patterns map directly to environments using:
@@ -110,3 +145,22 @@ These patterns map directly to environments using:
 - SIEM tools for log aggregation and audit evidence
 - SOC 2, ISO 27001, SOX, and internal security audits
 
+---
+
+## Additional Portfolio Work
+
+This repository focuses on IAM/GRC governance and audit readiness.
+
+For additional technical security projects (vulnerability scanning, ethical hacking, Python automation):  
+🔗 [Technical Security Portfolio](https://kendersaintjuste7.wordpress.com/iam-grc-portfolio)
+
+For software engineering projects (full-stack development, AI/ML, SaaS applications):  
+🔗 [Engineering Portfolio](https://portfolio-website-drab-delta-15.vercel.app)
+
+---
+
+## Contact
+
+**LinkedIn:** [linkedin.com/in/kendersaintjuste](https://www.linkedin.com/in/kendersaintjuste)  
+**GitHub:** [github.com/KsaintJ](https://github.com/KsaintJ)  
+**Location:** Tampa, FL
