@@ -6,7 +6,7 @@
 **Background:** B.S. Information Science (Information Security Concentration) | University of South Florida '23  
 **Certifications:** Security+ (In Progress, Exam: March 2026) | ISC2 CC (planned)  
 **Current Role:** Security Operations Support @ TeamViewer  
-**Tools & Frameworks (conceptual & governance-focused):** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
+**Tools & Frameworks:** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
 
 This portfolio demonstrates hands-on IAM/GRC program design using frameworks and methodologies aligned with enterprise identity governance and compliance requirements.
 
