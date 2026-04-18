@@ -4,8 +4,8 @@
 
 **Created by:** Kender Saint-Juste  
 **Background:** B.S. Information Science (Information Security Concentration) | University of South Florida '23  
-**Certifications:** Security+ (In Progress, Exam: March 2026) | ISC2 CC (planned)  
-**Current Role:** Security Operations Support @ TeamViewer  
+**Certifications:** Security+ SY0-701 (In Progress) | ISC2 CC (planned)  
+**Current Focus:** Information Security Professional | Targeting IAM Analyst & GRC Analyst Roles  
 **Tools & Frameworks:** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
 
 This portfolio demonstrates hands-on IAM/GRC program design using frameworks and methodologies aligned with enterprise identity governance and compliance requirements.
@@ -58,7 +58,7 @@ documentation.
 
 ## Sample Diagram: JML Lifecycle Flow
 
-![JML Lifecycle](diagrams/jml-lifecycle-flow.png)
+[→ View JML Lifecycle Flow](diagrams/jml-lifecycle-flow.md)
 
 *Shows automated provisioning, approval workflows, and audit checkpoints for Joiner/Mover/Leaver events.*
 
