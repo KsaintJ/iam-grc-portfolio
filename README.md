@@ -58,7 +58,7 @@ documentation.
 
 ## Sample Diagram: JML Lifecycle Flow
 
-[→ View JML Lifecycle Flow](diagrams/jml-lifecycle-flow.md)
+![JML Lifecycle](diagrams/jml-lifecycle-flow.png)
 
 *Shows automated provisioning, approval workflows, and audit checkpoints for Joiner/Mover/Leaver events.*
 
