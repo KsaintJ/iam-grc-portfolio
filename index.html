@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Kender Saint-Juste | GRC Analyst · Identity & Access Governance</title>
+<meta name="description" content="GRC Analyst specializing in identity governance, risk management, and compliance frameworks. USF B.S. Information Science · Penn State MSE.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f;--s1:#0f1625;--s2:#161f32;--border:#1c2a40;
+  --blue:#3b82f6;--cyan:#22d3ee;--green:#34d399;--gold:#fbbf24;
+  --text:#e2e8f0;--muted:#64748b;--dim:#253045;
+  --mono:'IBM Plex Mono',monospace;--sans:'Sora',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;}
+
+/* ENTRANCE ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+.anim-1{animation:fadeUp .6s ease both}
+.anim-2{animation:fadeUp .6s .1s ease both}
+.anim-3{animation:fadeUp .6s .2s ease both}
+.anim-4{animation:fadeUp .6s .3s ease both}
+.anim-5{animation:fadeUp .6s .4s ease both}
+.anim-6{animation:fadeUp .6s .5s ease both}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(7,9,15,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:56px;}
+.nav-brand{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:1px;color:var(--text);}
+.nav-brand span{color:var(--blue);}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;}
+.nav-links a{font-family:var(--mono);font-size:10px;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:5px;transition:all .15s;letter-spacing:.3px;}
+.nav-links a:hover{color:var(--cyan);background:rgba(34,211,238,.08);}
+.nav-cta{background:var(--blue);color:#fff!important;border-radius:5px;}
+.nav-cta:hover{background:#2563eb!important;}
+
+/* HERO */
+.hero{min-height:90vh;display:flex;align-items:center;padding:80px 5%;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.12),transparent 65%);pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-80px;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(34,211,238,.07),transparent 65%);pointer-events:none;}
+.hero-content{max-width:700px;position:relative;z-index:1;}
+.hero-label{font-family:var(--mono);font-size:11px;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--blue);}
+.hero h1{font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-2px;line-height:1.05;margin-bottom:12px;}
+.hero h1 .hl{color:var(--blue);}
+.hero-title{font-family:var(--mono);font-size:clamp(13px,1.5vw,15px);color:var(--cyan);margin-bottom:20px;letter-spacing:.5px;}
+.hero-desc{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:32px;}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-primary{background:var(--blue);color:#fff;text-decoration:none;padding:12px 24px;border-radius:7px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.5px;transition:background .15s;cursor:pointer;border:none;}
+.btn-primary:hover{background:#2563eb;}
+.btn-secondary{background:transparent;color:var(--text);text-decoration:none;padding:11px 23px;border-radius:7px;border:1px solid var(--border);font-family:var(--mono);font-size:11px;letter-spacing:.5px;transition:all .15s;}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);}
+.hero-stats{display:flex;gap:32px;margin-top:48px;flex-wrap:wrap;}
+.hstat{border-left:2px solid var(--blue);padding-left:16px;}
+.hstat-val{font-family:var(--mono);font-size:24px;font-weight:600;color:var(--text);line-height:1;}
+.hstat-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.5px;margin-top:4px;}
+
+/* STATUS BAR */
+.status-bar{background:rgba(52,211,153,.06);border-top:1px solid rgba(52,211,153,.2);border-bottom:1px solid rgba(52,211,153,.2);padding:10px 5%;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;color:var(--green);}
+.status-dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
+
+/* SECTIONS */
+section{padding:80px 5%;}
+.sec-label{font-family:var(--mono);font-size:10px;color:var(--blue);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+h2{font-size:clamp(24px,3vw,36px);font-weight:700;letter-spacing:-1px;margin-bottom:8px;}
+.sec-sub{color:var(--muted);font-size:15px;max-width:560px;margin-bottom:48px;}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:700px){.about-grid{grid-template-columns:1fr;}}
+.about-text{font-size:15px;color:var(--muted);line-height:1.8;}
+.about-text strong{color:var(--text);}
+.about-text p{margin-bottom:16px;}
+.about-card{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:24px;}
+.about-card-title{font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+.about-item{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--dim);}
+.about-item:last-child{border-bottom:none;}
+.about-icon{font-size:16px;flex-shrink:0;margin-top:2px;}
+.about-detail strong{display:block;font-size:13px;font-weight:600;margin-bottom:2px;}
+.about-detail span{font-family:var(--mono);font-size:10px;color:var(--muted);}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.skill-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:20px;transition:border-color .2s;}
+.skill-card:hover{border-color:rgba(59,130,246,.3);}
+.skill-category{font-family:var(--mono);font-size:9px;color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;}
+.skill-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.stag{font-family:var(--mono);font-size:9px;padding:3px 8px;border-radius:4px;border:1px solid;letter-spacing:.3px;}
+.st-green{color:var(--green);border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.07);}
+.st-blue{color:var(--blue);border-color:rgba(59,130,246,.3);background:rgba(59,130,246,.07);}
+.st-gold{color:var(--gold);border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.07);}
+.st-cyan{color:var(--cyan);border-color:rgba(34,211,238,.3);background:rgba(34,211,238,.07);}
+.st-muted{color:var(--muted);border-color:var(--dim);}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:700px){.projects-grid{grid-template-columns:1fr;}}
+.proj-card{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color .2s,transform .2s;}
+.proj-card:hover{border-color:rgba(59,130,246,.4);transform:translateY(-3px);}
+.proj-icon{font-size:28px;margin-bottom:12px;}
+.proj-title{font-weight:700;font-size:15px;margin-bottom:6px;}
+.proj-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px;}
+.proj-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;}
+.proj-link{font-family:var(--mono);font-size:10px;color:var(--blue);text-decoration:none;letter-spacing:.3px;}
+.proj-link:hover{color:var(--cyan);}
+.proj-badge{font-family:var(--mono);font-size:8px;padding:2px 7px;border-radius:3px;background:rgba(52,211,153,.1);color:var(--green);border:1px solid rgba(52,211,153,.25);margin-bottom:10px;display:inline-block;}
+
+/* FRAMEWORKS */
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
+.fw-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:18px;text-align:center;transition:border-color .2s,transform .2s;}
+.fw-card:hover{border-color:rgba(59,130,246,.3);transform:translateY(-2px);}
+.fw-badge{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--blue);margin-bottom:6px;}
+.fw-name{font-size:13px;font-weight:600;margin-bottom:4px;}
+.fw-desc{font-family:var(--mono);font-size:9px;color:var(--muted);line-height:1.6;}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:12px;}
+.exp-item{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:24px;position:relative;padding-left:32px;}
+.exp-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:var(--blue);}
+.exp-item.dim::before{background:rgba(59,130,246,.4);}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:6px;flex-wrap:wrap;}
+.exp-title{font-weight:700;font-size:15px;}
+.exp-dates{font-family:var(--mono);font-size:10px;color:var(--muted);}
+.exp-company{font-family:var(--mono);font-size:11px;color:var(--cyan);margin-bottom:12px;letter-spacing:.3px;}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.exp-bullets li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.6;}
+.exp-bullets li::before{content:'▸';position:absolute;left:0;color:var(--blue);font-size:11px;top:2px;}
+.exp-bullets li strong{color:var(--text);}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+@media(max-width:600px){.edu-grid{grid-template-columns:1fr;}}
+.edu-card{background:var(--s1);border:1px solid var(--border);border-radius:10px;padding:22px;}
+.edu-degree{font-weight:700;font-size:14px;margin-bottom:4px;}
+.edu-school{font-family:var(--mono);font-size:11px;color:var(--cyan);margin-bottom:8px;letter-spacing:.3px;}
+.edu-detail{font-size:12px;color:var(--muted);line-height:1.6;}
+
+/* CERTS */
+.cert-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;}
+.cert-badge{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:12px 18px;display:flex;align-items:center;gap:10px;}
+.cert-dot{width:8px;height:8px;border-radius:50%;}
+.cert-dot.active{background:var(--green);animation:pulse 2s infinite;}
+.cert-dot.planned{background:var(--gold);}
+.cert-name{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.3px;}
+.cert-status{font-family:var(--mono);font-size:8px;color:var(--muted);}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:700px){.contact-grid{grid-template-columns:1fr;}}
+.contact-intro{font-size:16px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+.contact-links{display:flex;flex-direction:column;gap:10px;}
+.contact-link{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--s1);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text);transition:border-color .2s;}
+.contact-link:hover{border-color:var(--blue);}
+.contact-link-icon{font-size:18px;}
+.contact-link-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.5px;display:block;}
+.contact-link-val{font-size:13px;font-weight:500;}
+
+/* QR */
+.qr-section{background:var(--s1);border:1px solid var(--border);border-radius:12px;padding:28px;text-align:center;}
+.qr-title{font-weight:700;font-size:15px;margin-bottom:6px;}
+.qr-desc{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.qr-section img{border-radius:8px;display:block;margin:0 auto 16px;}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:28px 5%;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:9px;color:var(--muted);flex-wrap:wrap;gap:12px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">KSJ<span>.</span></span>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#frameworks">Frameworks</a>
+    <a href="resume.html" target="_blank">Resume</a>
+    <a href="#" class="nav-cta" onclick="downloadResume();return false;">Resume ↓</a>
+  </div>
+</nav>
+
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>ACTIVELY SEEKING — GRC Analyst · IT Compliance Analyst · Information Security Analyst · Tampa Bay / Remote</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-label anim-1">GRC Analyst · Identity & Access Governance</div>
+    <h1 class="anim-2">Kender<br><span class="hl">Saint-Juste</span></h1>
+    <div class="hero-title anim-3">Governance, Risk & Compliance · Security Policy · Identity Lifecycle · Tampa, FL</div>
+    <p class="hero-desc anim-4">I protect organizations by governing who has access to what — and proving it to auditors. Specializing in GRC, identity lifecycle management, compliance framework mapping, and security policy development.</p>
+    <div class="hero-actions anim-5">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
+    </div>
+    <div class="hero-stats anim-6">
+      <div class="hstat"><div class="hstat-val">10+</div><div class="hstat-label">YRS PROFESSIONAL EXP</div></div>
+      <div class="hstat"><div class="hstat-val">200+</div><div class="hstat-label">ENTERPRISE ACCOUNTS</div></div>
+      <div class="hstat"><div class="hstat-val">4</div><div class="hstat-label">GRC PORTFOLIO PROJECTS</div></div>
+      <div class="hstat"><div class="hstat-val" style="color:var(--gold)">Active</div><div class="hstat-label">SECURITY+ IN PROGRESS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="fade-in">
+  <div class="sec-label">About</div>
+  <h2>The Story</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Long before I knew what GRC was called, I was already being shaped by it. My interest in law — in rules, evidence, and how systems are held accountable — was with me before I ever studied technology.</p>
+      <p>When I was at USF studying Information Science with a security concentration, I started researching career paths. The work described — safeguarding systems, developing security policies, access governance — wasn't just technical. It was governance. My degree was preparing me for it before I fully understood what that meant.</p>
+      <p>At TeamViewer I spent nearly five years in the work itself. Enterprise IT teams asking about access management and compliance. Then support — managing company profiles, provisioning and deprovisioning users, handling SOC 2 inquiries, setting up MFA, escalating SAML failures. Every day I saw governance problems disguised as technical tickets.</p>
+      <p>My <strong>B.S. in Information Science</strong> coursework in <strong>CIS 4365</strong> (Security Policies, NIST CSF) and <strong>CIS 4361</strong> (Information Security Management, CISSP-aligned) trained me directly for this work. I'm building hands-on Entra ID lab evidence, pursuing <strong>CompTIA Security+ SY0-701</strong>, and <strong>SC-300</strong> next.</p>
+    </div>
+    <div class="about-card">
+      <div class="about-card-title">Quick Profile</div>
+      <div class="about-item"><span class="about-icon">🎓</span><div class="about-detail"><strong>B.S. Information Science</strong><span>USF · InfoSec Concentration · 3.76 GPA</span></div></div>
+      <div class="about-item"><span class="about-icon">📚</span><div class="about-detail"><strong>M.S. Software Engineering (In Progress)</strong><span>Penn State World Campus</span></div></div>
+      <div class="about-item"><span class="about-icon">📍</span><div class="about-detail"><strong>Tampa, Florida</strong><span>Remote-First · Hybrid Available · On-Site Last</span></div></div>
+      <div class="about-item"><span class="about-icon">🌐</span><div class="about-detail"><strong>Trilingual</strong><span>English · French · Haitian Creole (all Native)</span></div></div>
+      <div class="about-item"><span class="about-icon">🏢</span><div class="about-detail"><strong>Founder, Juste™ LLC</strong><span>Tampa, FL · Truth in Technology™</span></div></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="fade-in">
+  <div class="sec-label">Skills</div>
+  <h2>Technical Stack</h2>
+  <p class="sec-sub">Frameworks, tools, and platforms relevant to GRC and identity governance roles.</p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-category">GRC & Compliance</div>
+      <div class="skill-tags">
+        <span class="stag st-green">Policy Development</span><span class="stag st-green">Risk Assessment</span><span class="stag st-green">Control Mapping</span><span class="stag st-green">Audit Evidence</span><span class="stag st-green">Gap Analysis</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Identity & Access</div>
+      <div class="skill-tags">
+        <span class="stag st-blue">RBAC</span><span class="stag st-blue">JML Lifecycle</span><span class="stag st-blue">Least Privilege</span><span class="stag st-blue">SSO/SAML</span><span class="stag st-blue">MFA</span><span class="stag st-cyan">Entra ID (Lab)</span><span class="stag st-cyan">Okta (Practicing)</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Frameworks</div>
+      <div class="skill-tags">
+        <span class="stag st-green">NIST CSF 2.0</span><span class="stag st-green">SOC 2</span><span class="stag st-green">ISO 27001</span><span class="stag st-gold">NIST 800-53</span><span class="stag st-gold">CIS Controls v8</span><span class="stag st-gold">HIPAA</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-category">Tools & Platforms</div>
+      <div class="skill-tags">
+        <span class="stag st-cyan">Vanta (Demo)</span><span class="stag st-cyan">Drata (Demo)</span><span class="stag st-blue">Microsoft Purview</span><span class="stag st-muted">ServiceNow GRC</span><span class="stag st-muted">Jira</span><span class="stag st-muted">Zendesk</span><span class="stag st-muted">Salesforce</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" style="background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="fade-in">
+  <div class="sec-label">Portfolio</div>
+  <h2>GRC Projects</h2>
+  <p class="sec-sub">Audit-ready governance documentation, compliance policy work, and access control frameworks. Built to real standards — not theoretical exercises.</p>
+  <div class="projects-grid">
+    <div class="proj-card">
+      <div class="proj-badge">POLICY DOCUMENT</div>
+      <div class="proj-icon">📄</div>
+      <div class="proj-title">BYOD & Password Security Policy</div>
+      <div class="proj-desc">Authored a full cybersecurity policy whitepaper for a professional services firm. Mapped four identified vulnerabilities to NIST CSF 2.0 controls. Includes regulatory compliance table (Florida Bar Rule 1.6(c), FIPA, HIPAA, NIST SP 800-63B) and RBAC-based account lifecycle governance.</div>
+      <div class="proj-tags"><span class="stag st-green">NIST CSF 2.0</span><span class="stag st-blue">RBAC</span><span class="stag st-gold">HIPAA</span><span class="stag st-cyan">Policy Writing</span></div>
+      <a href="https://github.com/KsaintJ/iam-grc-portfolio/tree/main/policy-documents" target="_blank" class="proj-link">View Policy →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge">FRAMEWORK MAPPING</div>
+      <div class="proj-icon">🗺️</div>
+      <div class="proj-title">NIST CSF → SOC 2 Control Crosswalk</div>
+      <div class="proj-desc">Control crosswalk mapping NIST CSF 2.0 functions to SOC 2 Trust Services Criteria. Demonstrates how governance frameworks align in practice — the type of mapping used in real compliance gap assessments and audit preparation.</div>
+      <div class="proj-tags"><span class="stag st-green">NIST CSF 2.0</span><span class="stag st-green">SOC 2</span><span class="stag st-gold">Control Mapping</span><span class="stag st-cyan">Audit Ready</span></div>
+      <a href="https://github.com/KsaintJ/iam-grc-portfolio/tree/main/framework-mapping" target="_blank" class="proj-link">View Crosswalk →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge">ACCESS GOVERNANCE</div>
+      <div class="proj-icon">♻️</div>
+      <div class="proj-title">Joiner-Mover-Leaver (JML) Lifecycle Controls</div>
+      <div class="proj-desc">Enterprise identity lifecycle workflows with approval paths, SLA targets, and provisioning/deprovisioning controls. Includes flow diagrams and evidence collection templates for access governance audits.</div>
+      <div class="proj-tags"><span class="stag st-blue">JML</span><span class="stag st-green">ISO 27001</span><span class="stag st-gold">Audit Ready</span></div>
+      <a href="https://github.com/KsaintJ/iam-grc-portfolio/tree/main/jml-lifecycle-controls" target="_blank" class="proj-link">View Project →</a>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge">IAM GOVERNANCE</div>
+      <div class="proj-icon">📋</div>
+      <div class="proj-title">RBAC & Quarterly Access Review Framework</div>
+      <div class="proj-desc">Audit-ready quarterly access-review workflows incorporating evidence collection, exception handling, and least-privilege enforcement. Templates mapped to SOC 2 CC6.3 compliance evidence requirements.</div>
+      <div class="proj-tags"><span class="stag st-blue">RBAC</span><span class="stag st-green">SOC 2 CC6</span><span class="stag st-gold">Least Privilege</span></div>
+      <a href="https://github.com/KsaintJ/iam-grc-portfolio/tree/main/access-reviews-rbac" target="_blank" class="proj-link">View Project →</a>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- FRAMEWORKS -->
+<section id="frameworks">
+  <div class="fade-in">
+  <div class="sec-label">Frameworks</div>
+  <h2>Framework Fluency</h2>
+  <p class="sec-sub">Studied in USF coursework (CIS 4365 + CIS 4361) and actively applied in portfolio projects and compliance documentation.</p>
+  <div class="fw-grid">
+    <div class="fw-card"><div class="fw-badge">NIST</div><div class="fw-name">NIST CSF 2.0</div><div class="fw-desc">Govern · Identify · Protect · Detect · Respond · Recover</div></div>
+    <div class="fw-card"><div class="fw-badge">SOC 2</div><div class="fw-name">SOC 2 Type II</div><div class="fw-desc">CC6 Access Controls · Trust Services Criteria · Audit Evidence</div></div>
+    <div class="fw-card"><div class="fw-badge">ISO</div><div class="fw-name">ISO 27001</div><div class="fw-desc">ISMS Framework · Annex A Controls · A.5.15-A.5.18 IAM</div></div>
+    <div class="fw-card"><div class="fw-badge">CIS</div><div class="fw-name">CIS Controls v8</div><div class="fw-desc">Control 5 (Account Mgmt) · Control 6 (Access Control)</div></div>
+    <div class="fw-card"><div class="fw-badge">800-53</div><div class="fw-name">NIST 800-53 Rev 5</div><div class="fw-desc">AC Family · IA Family · AU Family</div></div>
+    <div class="fw-card"><div class="fw-badge">HIPAA</div><div class="fw-name">HIPAA Security Rule</div><div class="fw-desc">Access Controls · Audit Controls · Transmission Security</div></div>
+  </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--s1);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="fade-in">
+  <div class="sec-label">Experience</div>
+  <h2>Work History</h2>
+  <p class="sec-sub">10+ years of progressive professional experience, with IAM and security governance work throughout the last five years.</p>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-header"><span class="exp-title">Customer Support Specialist — Enterprise IAM & Access Governance</span><span class="exp-dates">Jan 2023 – Apr 2026</span></div>
+      <div class="exp-company">TeamViewer · Clearwater, FL</div>
+      <ul class="exp-bullets">
+        <li>Executed <strong>Joiner-Mover-Leaver (JML)</strong> provisioning workflows for enterprise accounts, enforcing RBAC and least-privilege access controls to maintain compliance across complex authentication environments.</li>
+        <li>Performed technical triage on <strong>SSO/SAML</strong> authentication failures for 10–15 enterprise cases daily; resolved configuration blockers and coordinated with Level 2 engineering for final resolution.</li>
+        <li>Managed access provisioning/deprovisioning and <strong>SOC 2-aligned</strong> audit documentation; selected as <strong>Internal Security Champion</strong> in recognition of cross-functional security contributions.</li>
+        <li>Communicated complex authentication requirements, access control standards, and compliance obligations to enterprise IT stakeholders across <strong>200+ enterprise accounts</strong>.</li>
+      </ul>
+    </div>
+    <div class="exp-item dim">
+      <div class="exp-header"><span class="exp-title">Inside Sales Representative</span><span class="exp-dates">Jan 2022 – Jan 2023</span></div>
+      <div class="exp-company">TeamViewer · Clearwater, FL</div>
+      <ul class="exp-bullets">
+        <li>Assessed identity governance and access control requirements for enterprise IT stakeholders; communicated SSO compliance requirements and access control standards to technical and non-technical decision-makers.</li>
+      </ul>
+    </div>
+    <div class="exp-item dim">
+      <div class="exp-header"><span class="exp-title">Sales Development Representative</span><span class="exp-dates">Jun 2021 – Jan 2022</span></div>
+      <div class="exp-company">TeamViewer · Clearwater, FL</div>
+      <ul class="exp-bullets">
+        <li>Conducted structured identity and access governance discovery across <strong>200+ enterprise accounts</strong>, assessing remote access architectures, SSO configurations, and access control gaps.</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="fade-in">
+  <div class="sec-label">Education</div>
+  <h2>Academic Background</h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-degree">B.S. Information Science</div>
+      <div class="edu-school">University of South Florida · Dec 2023</div>
+      <div class="edu-detail">Concentration: Information Security · Minor: Entrepreneurship · Major GPA: 3.76<br><br>Core security coursework: CIS 3360 (Principles of Information Security), CIS 4365 (Security Policies + NIST CSF), CIS 4361 (Info Security Management, CISSP-aligned), CIS 3367 (OS Security), CIS 4204 (Ethical Hacking — A+)</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-degree">M.S. Software Engineering (In Progress)</div>
+      <div class="edu-school">Pennsylvania State University, World Campus</div>
+      <div class="edu-detail">Completed: SWENG 861 (Software Construction — A), SWENG 887 (Software Systems Architecture), SWENG 886 (Requirements Engineering)<br><br>Certificate #1 target: Software Architecture & Design</div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;">
+    <div class="sec-label">Certifications</div>
+    <div class="cert-row">
+      <div class="cert-badge"><div class="cert-dot active"></div><div><div class="cert-name">CompTIA Security+ SY0-701</div><div class="cert-status">IN PROGRESS · TARGET: SEPT 2026</div></div></div>
+      <div class="cert-badge"><div class="cert-dot planned"></div><div><div class="cert-name">Microsoft SC-300</div><div class="cert-status">PLANNED · AFTER SECURITY+</div></div></div>
+      <div class="cert-badge"><div class="cert-dot planned"></div><div><div class="cert-name">CISM</div><div class="cert-status">PLANNED · 2028-2029</div></div></div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:var(--s1);border-top:1px solid var(--border);">
+  <div class="fade-in">
+  <div class="sec-label">Contact</div>
+  <h2>Let's Connect</h2>
+  <div class="contact-grid">
+    <div>
+      <p class="contact-intro">Actively seeking GRC Analyst, IT Compliance Analyst, and Information Security Analyst roles. Available for remote positions nationwide and hybrid roles in the Tampa Bay area.</p>
+      <div class="contact-links">
+        <a href="mailto:ksaintjuste7@gmail.com" class="contact-link"><span class="contact-link-icon">✉️</span><div><span class="contact-link-label">EMAIL</span><span class="contact-link-val">ksaintjuste7@gmail.com</span></div></a>
+        <a href="https://linkedin.com/in/kendersaintjuste" target="_blank" class="contact-link"><span class="contact-link-icon">💼</span><div><span class="contact-link-label">LINKEDIN</span><span class="contact-link-val">linkedin.com/in/kendersaintjuste</span></div></a>
+        <a href="https://github.com/KsaintJ/iam-grc-portfolio" target="_blank" class="contact-link"><span class="contact-link-icon">⚙️</span><div><span class="contact-link-label">GITHUB PORTFOLIO</span><span class="contact-link-val">github.com/KsaintJ/iam-grc-portfolio</span></div></a>
+        <a href="resume.html" target="_blank" class="contact-link"><span class="contact-link-icon">📄</span><div><span class="contact-link-label">ONLINE RESUME</span><span class="contact-link-val">career.usejuste.com/resume</span></div></a>
+      </div>
+    </div>
+    <div class="qr-section">
+      <div class="qr-title">Networking Card</div>
+      <div class="qr-desc">Scan to open full portfolio instantly. Add to your phone for quick sharing at networking events.</div>
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAACvCAIAAAAE8BkiAAADqklEQVR4nO3dMa7ENBSG0QHR07EDOiQ2xnLYGBILovykFBbGdpJB57QvM/Eb/bq6cmL7h59/+fUDn8/n8/nx6QHwItJApIFIA5EGIg1EGog0EGkg0kCkgUgDkQYiDeSnqat/++OvQ+O4+PvP3//9facuvm0YY0/9kmNqA5EGIg1EGshcF3kx1aGMrfSJtzV3t7WrK1ZGpTYQaSDSQKSBLHWRF1P9y0pzt9LNjb9qPKqpYaw0hud+yTG1gUgDkQYiDWRnF3nOxknAqT5x5Zs3NpW3URuINBBpINJAvqOLvHiqX5u671e0jRdqA5EGIg1EGsjOLvJc37SxXzv3Aub4RlODfKoDVRuINBBpINJAlrrI2xYaj628rrjyBuLGf/8lv6TaQKSBSAORBvLDN55ds7FtPLc42hNtvps0EGkg0kCW9ovc2KBt3K1n6ptvG8bUfZ9aKq42EGkg0kCkgTz2RHvlQfO4M1rpqjY+s974JP3i3IN1tYFIA5EGIg1krot8ajLutq0Yn5o/fcnbmmoDkQYiDUQayMGdflYmAW/75pVV2OMbrSwG3zidOkVtINJApIFIA5lbXbPy+t7FuceyKzfaOMu58cc5N4wLtYFIA5EGIg3k4Fzk1N6LK7Nvty2O3tgnbuS9SI6QBiINRBrI0lzkxW1d1Uv6xPFnV5iL5HnSQKSBSAPZ2UWOvWTfxpcs1Hnn5pJqA5EGIg1EGsjSE+2VhSu3bRV+br/IlzzRHt/XXCT/kTQQaSDSQA6eXXPuYMKnpjWnhrHx4qlRTX3VhdpApIFIA5EGsnR2zcV4qm782dsWdN92Os3G/Yc2fnZMbSDSQKSBSAPZORf5vz8fceNTeO9F8nbSQKSBSAN5y+qa8cXjYdzWkD71quPFuYZUbSDSQKSBSAM5+F7kRredCLixe71tRdDGplJtINJApIFIA9n5XuRGK4dQr1w8bsFu247o4rbn3WoDkQYiDUQayMGdfqbc9qB5pU9cWVd+cdtPN0VtINJApIFIA9l5AuJTbdTGPYTOTbZuXFd+buJSbSDSQKSBSAM5eI72ORsX+Yz/em4l9crs6rlWV20g0kCkgUgD+Y4ucmU3yY077pzrXlc+O/X/jqkNRBqINBBpIEs7/Ty12uQrDqsZe8k7lRdqA5EGIg1EGsjSXORtS7bPHZc4vng8jKkbbexAx8xFsoc0EGkg0kC+Y79I7qE2EGkg0kCkgUgDkQYiDUQaiDQQaSDSQKSBSAORBvIPHFANMVtk1KkAAAAASUVORK5CYII=" width="140" height="140" alt="QR code — career.usejuste.com" style="image-rendering:pixelated;">
+      <div style="font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.5px;">career.usejuste.com</div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Kender Saint-Juste · Tampa, FL</span>
+  <span>GRC Analyst · Security Compliance · Juste™ LLC Founder</span>
+  <span style="color:var(--blue);">Truth in Technology™</span>
+</footer>
+
+<script>
+function downloadResume(){
+  const a=document.createElement('a');
+  a.href='Kender_Saint-Juste_GRC_Analyst.pdf';
+  a.download='Kender_Saint-Juste_GRC_Analyst.pdf';
+  a.click();
+}
+
+// Scroll-triggered fade-in
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+
+// Active nav highlight
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a[href^="#"]');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)current=s.getAttribute('id');});
+  navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+current?'var(--cyan)':'';});
+});
+</script>
+</body>
+</html>
