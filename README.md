@@ -1,11 +1,11 @@
-# IAM / GRC Portfolio
+# GRC Analyst Portfolio
 
 ## Portfolio Summary
 
 **Created by:** Kender Saint-Juste  
 **Background:** B.S. Information Science (Information Security Concentration) | University of South Florida '23  
-**Certifications:** Security+ SY0-701 (In Progress) | ISC2 CC (planned)  
-**Current Focus:** Information Security Professional | Targeting IAM Analyst & GRC Analyst Roles  
+**Certifications:** Security+ SY0-701 (In Progress) | Microsoft SC-300 PLANNED · AFTER SECURITY+ |  CISM PLANNED · 2028-2029
+**Current Focus:** Information Security Professional | Targeting GRC Analyst Roles · IT Compliance Analyst · Information Security Analyst
 **Tools & Frameworks:** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
 
 This portfolio demonstrates hands-on IAM/GRC program design using frameworks and methodologies aligned with enterprise identity governance and compliance requirements.
@@ -58,7 +58,7 @@ documentation.
 
 ## Sample Diagram: JML Lifecycle Flow
 
-[→ View JML Lifecycle Flow](diagrams/jml-lifecycle-flow.md)
+![JML Lifecycle](diagrams/jml-lifecycle-flow.png)
 
 *Shows automated provisioning, approval workflows, and audit checkpoints for Joiner/Mover/Leaver events.*
 
@@ -152,10 +152,9 @@ These patterns map directly to environments using:
 This repository focuses on IAM/GRC governance and audit readiness.
 
 For additional technical security projects (vulnerability scanning, ethical hacking, Python automation):  
-🔗 [Technical Security Portfolio](https://kendersaintjuste7.wordpress.com/iam-grc-portfolio)
 
-For software engineering projects (full-stack development, AI/ML, SaaS applications):  
-🔗 [Engineering Portfolio](https://portfolio-website-drab-delta-15.vercel.app)
+
+
 
 ---
 
