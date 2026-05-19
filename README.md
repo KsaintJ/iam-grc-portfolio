@@ -1,165 +1,131 @@
 # GRC Analyst Portfolio
+### Kender Saint-Juste · Tampa, FL · [career.usejuste.com](https://career.usejuste.com)
 
-## Portfolio Summary
+**B.S. Information Science, Information Security Concentration** · University of South Florida '23  
+**M.S. Software Engineering (In Progress)** · Penn State World Campus  
+**Certifications:** CompTIA Security+ SY0-701 *(In Progress · Target: Sept 2026)* · SC-300 *(Planned)* · CISM *(Planned 2028–2029)*
 
-**Created by:** Kender Saint-Juste  
-**Background:** B.S. Information Science (Information Security Concentration) | University of South Florida '23  
-**Certifications:** Security+ SY0-701 (In Progress) | Microsoft SC-300 PLANNED · AFTER SECURITY+ |  CISM PLANNED · 2028-2029
-**Current Focus:** Information Security Professional | Targeting GRC Analyst Roles · IT Compliance Analyst · Information Security Analyst
-**Tools & Frameworks:** RBAC design, JML lifecycle governance, SOC 2, ISO 27001, Azure AD/Okta concepts, Jira workflows, audit evidence collection  
-
-This portfolio demonstrates hands-on IAM/GRC program design using frameworks and methodologies aligned with enterprise identity governance and compliance requirements.
+> Targeting: **GRC Analyst · IT Compliance Analyst · Information Security Analyst**  
+> Specialization: Governance, Risk & Compliance · Identity & Access Governance · Security Policy Development · Audit Readiness
 
 ---
 
-## Start Here
+## Portfolio at a Glance
 
-If you have 5 minutes:
-- 🔐 **Access Reviews & RBAC:** `/access-reviews-rbac`
-- 🔄 **JML Lifecycle Controls:** `/jml-lifecycle-controls`
-- 🔑 **SSO / MFA Governance:** `/sso-mfa-runbook`
-
-These sections reflect how IAM controls are reviewed in real audits.
-
----
-
-> This repository demonstrates how I design, document, and validate IAM controls the same way they are reviewed in real audits and security assessments.
-
-Job-ready IAM/GRC portfolio demonstrating practical access governance,
-identity lifecycle controls, and SSO/MFA implementation with audit-ready
-documentation.
+| Artifact | Type | Frameworks |
+|---|---|---|
+| [BYOD & Password Security Policy](./policy-documents/byod-password-security-policy.md) | Policy Document | NIST CSF 2.0 · HIPAA · FIPA · NIST SP 800-63B |
+| [NIST CSF 2.0 → SOC 2 Control Crosswalk](./framework-mapping/nist-csf-soc2-crosswalk.md) | Framework Mapping | NIST CSF 2.0 · SOC 2 TSC · Gap Analysis |
+| [RBAC & Quarterly Access Review Framework](./access-reviews-rbac/) | Access Governance | SOC 2 CC6 · ISO 27001 · Least Privilege |
+| [Joiner–Mover–Leaver (JML) Lifecycle Controls](./jml-lifecycle-controls/) | Identity Lifecycle | SOC 2 · ISO 27001 · NIST CSF |
+| [SSO / MFA Rollout Runbook](./sso-mfa-runbook/) | Implementation Runbook | SAML · OAuth · MFA Governance · Audit Evidence |
+| [Audit Evidence Reference](./audit-evidence/) | Audit Preparation | SOC 2 · ISO 27001 · Evidence Collection |
 
 ---
 
-## Projects
+## Framework Coverage
 
-### 1. Access Reviews & RBAC Framework
-📁 `/access-reviews-rbac`  
-- Role-based access control (RBAC)
-- Quarterly access reviews
-- Exception handling
-- Audit evidence collection
-
-### 2. Joiner–Mover–Leaver (JML) Lifecycle Controls
-📁 `/jml-lifecycle-controls`  
-- Identity lifecycle governance
-- Provisioning, role changes, deprovisioning
-- Approval workflows and SLAs
-- Evidence retention for audits
-
-### 3. SSO / MFA Rollout Runbook
-📁 `/sso-mfa-runbook`  
-- IdP integration (SAML / OAuth)
-- MFA enforcement strategy
-- Break-glass access handling
-- Logging and audit readiness
+| Framework | Depth | Where Applied |
+|---|---|---|
+| NIST CSF 2.0 | All 6 Functions (Govern → Recover) | Policy document · Framework crosswalk |
+| SOC 2 Trust Services Criteria | CC1–CC9 · Gap analysis | Crosswalk · RBAC · Access reviews · Audit evidence |
+| ISO 27001 | Annex A · A.5.15–A.5.18 IAM controls | JML lifecycle · SSO/MFA runbook |
+| NIST SP 800-63B | Password & authentication standards | BYOD policy · MFA enforcement |
+| CIS Controls v8 | Controls 5 & 6 (Account/Access Mgmt) | RBAC framework |
+| HIPAA Security Rule | Access controls · Audit controls | BYOD policy · Evidence framework |
+| FIPA (Florida) | Data protection · Breach notification | BYOD policy |
 
 ---
 
-## Sample Diagram: JML Lifecycle Flow
+## GRC Artifacts
 
-![JML Lifecycle](diagrams/jml-lifecycle-flow.png)
+### 1. BYOD & Password Security Policy
+📁 [`policy-documents/`](./policy-documents/)
 
-*Shows automated provisioning, approval workflows, and audit checkpoints for Joiner/Mover/Leaver events.*
+Full cybersecurity policy written to a professional services organization environment. Identifies four risk conditions (V-01 through V-04), maps each to NIST CSF 2.0 controls, and documents regulatory compliance obligations across Florida Bar Rule 1.6(c), FIPA, HIPAA, and NIST SP 800-63B. Includes roles & responsibilities table, enforcement provisions, and audit evidence collection guidance mapped to SOC 2 TSC.
 
----
-
-## Framework Alignment
-- SOC 2
-- ISO 27001
-- Least Privilege
-- Audit Readiness
+**Control areas covered:** BYOD governance · Password complexity (NIST SP 800-63B aligned) · MFA enforcement · Account lifecycle management & least privilege
 
 ---
 
-## Audit Evidence Example
-A sample walkthrough of how IAM controls and supporting documentation would be presented during an audit.  
-**Folder:** `audit-evidence/`
+### 2. NIST CSF 2.0 → SOC 2 Control Crosswalk
+📁 [`framework-mapping/`](./framework-mapping/)
+
+Practitioner-level control mapping across all six NIST CSF 2.0 functions to SOC 2 Trust Services Criteria. Includes a coverage gap analysis identifying five SOC 2 criteria with no direct NIST CSF equivalent (CC8.1 Change Management, PI1.x Processing Integrity, P-series Privacy, A1.1 Capacity Planning), and an evidence mapping table showing which single evidence artifact satisfies multiple framework requirements simultaneously.
+
+**Use cases:** Dual-framework compliance programs · Audit preparation · Gap assessments · Evidence package design
 
 ---
 
-## Diagrams
-High-level visuals illustrating IAM lifecycle and governance flows.  
-**Folder:** `diagrams/`
+## IAM / Identity Governance Artifacts
+
+### 3. Access Reviews & RBAC Framework
+📁 [`access-reviews-rbac/`](./access-reviews-rbac/)
+
+Audit-ready quarterly access review process with RBAC role-permission matrix (filled example: Acme Health Services), exception handling workflow, and evidence retention guidance. Templates mapped to SOC 2 CC6.3 compliance evidence requirements.
 
 ---
 
-## How I'd Walk an Auditor or Security Lead Through This (2–3 Minutes)
+### 4. Joiner–Mover–Leaver (JML) Lifecycle Controls
+📁 [`jml-lifecycle-controls/`](./jml-lifecycle-controls/)
 
-**1. Start with control objectives**
-The goal of this IAM program is to ensure:
-- Access is granted based on role and business need (least privilege)
-- All access changes are approved, logged, and attributable
-- Separation of duties is enforced or formally documented
-- Evidence is retained to support audits and investigations
+Standardized identity lifecycle controls for Joiner, Mover, and Leaver events. Includes workflow diagrams, SLA targets, approval chains, and evidence checklists. Designed for environments using Okta, Entra ID, or any IGA platform.
 
-**2. Explain lifecycle-driven access**
-I begin with Joiner–Mover–Leaver (JML) because identity lifecycle events
-are the primary risk driver for unauthorized access.
-
-- Joiners receive role-based access aligned to job function
-- Movers trigger access review and re-provisioning
-- Leavers are deprovisioned within defined SLAs
-
-This ensures access stays aligned with employment status and role.
-
-**3. Show how RBAC enforces consistency**
-RBAC standardizes access by mapping roles to approved entitlements.
-This reduces manual decisions, prevents privilege creep, and enables
-repeatable approvals.
-
-- Requests follow defined approval paths
-- Roles are pre-approved and reviewed periodically
-- Privileged access is restricted and monitored
-
-**4. Explain secure access enforcement**
-SSO and MFA are enforced to:
-- Reduce credential sprawl
-- Strengthen authentication for sensitive systems
-- Provide centralized logging for access activity
-
-Privileged or high-risk access requires MFA by design.
-
-**5. Prove it with evidence**
-For every control, there is supporting evidence:
-- Tickets show requests and approvals
-- Logs show provisioning actions and timestamps
-- Access reviews show periodic recertification
-- Exceptions are documented, approved, and time-bound
-
-Evidence is organized to be audit-ready, not retroactively assembled.
-
-**6. What I would test as an auditor**
-- Can access be granted without approval? (should fail)
-- Are terminated users removed within SLA?
-- Are privileged roles protected by MFA?
-- Are access reviews completed and documented on schedule?
+![JML Lifecycle Flow](diagrams/jml-lifecycle-flow.png)
+*Joiner → Mover → Leaver governance flow with approval checkpoints and audit evidence retention.*
 
 ---
 
-## Where This Applies in Real Environments
+### 5. SSO / MFA Rollout Runbook
+📁 [`sso-mfa-runbook/`](./sso-mfa-runbook/)
 
-These patterns map directly to environments using:
-- Okta, Azure AD, or Entra ID for identity management
-- Jira or ServiceNow for access requests and approvals
-- SIEM tools for log aggregation and audit evidence
-- SOC 2, ISO 27001, SOX, and internal security audits
+Four-phase SSO and MFA implementation playbook covering risk assessment, pilot deployment, phased rollout, and full enforcement. Includes break-glass access handling, exception management, and audit evidence collection aligned to SOC 2 and ISO 27001.
 
 ---
 
-## Additional Portfolio Work
+### 6. Audit Evidence Reference
+📁 [`audit-evidence/`](./audit-evidence/)
 
-This repository focuses on IAM/GRC governance and audit readiness.
+Sample evidence index showing what to collect, where it comes from, and what it proves — organized by control type (access reviews, JML, MFA, privileged access, logging). Includes a completed quarterly access review example (Zendesk, Q4 2025) with real findings, remediation tickets, and attestation.
 
-For additional technical security projects (vulnerability scanning, ethical hacking, Python automation):  
+---
 
+## Templates
+📁 [`templates/`](./templates/)
 
+Reusable governance templates:
+- RBAC Role–Permission Matrix (blank + filled example)
+- Quarterly Access Review Checklist
+- JML Evidence Checklist
+- Sample completed access review (Zendesk Q4 2025)
 
+---
+
+## How This Maps to Real GRC Work
+
+The controls, evidence patterns, and framework mappings in this portfolio reflect how GRC programs operate in environments subject to SOC 2, ISO 27001, and NIST CSF audits:
+
+- **Policy → Control → Evidence** is the chain that satisfies auditors. Every artifact here follows that chain.
+- **Dual-framework mapping** (NIST CSF + SOC 2) reduces redundant compliance work — one evidence artifact satisfies both frameworks where mappings exist.
+- **Access governance** (RBAC, JML, access reviews) directly addresses SOC 2 CC6 — the most commonly tested control category in Type II audits.
+- **Gap analysis** in the crosswalk reflects the kind of assessment a GRC Analyst performs when an organization wants to pursue SOC 2 attestation alongside an existing NIST-aligned security program.
+
+---
+
+## Tools & Platforms
+
+`Microsoft Entra ID` `Okta` `Vanta` `Drata` `Microsoft Purview` `ServiceNow GRC` `Jira` `Zendesk` `Salesforce` `SAML/OAuth` `SIEM concepts`
 
 ---
 
 ## Contact
 
+**Portfolio:** [career.usejuste.com](https://career.usejuste.com)  
 **LinkedIn:** [linkedin.com/in/kendersaintjuste](https://www.linkedin.com/in/kendersaintjuste)  
 **GitHub:** [github.com/KsaintJ](https://github.com/KsaintJ)  
-**Location:** Tampa, FL
+**Email:** ksaintjuste7@gmail.com  
+**Location:** Tampa, FL · Remote-First · Hybrid Available
+
+---
+
+*GRC Analyst Portfolio · Kender Saint-Juste · Tampa, FL*
