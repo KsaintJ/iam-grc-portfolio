@@ -1,12 +1,23 @@
-# GRC Analyst Portfolio
+# IAM/GRC Analyst Portfolio
 ### Kender Saint-Juste · Tampa, FL · [career.usejuste.com](https://career.usejuste.com)
 
-**B.S. Information Science, Information Security Concentration** · University of South Florida '23  
-**M.S. Software Engineering (In Progress)** · Penn State World Campus  
-**Certifications:** CompTIA Security+ SY0-701 *(In Progress · Target: Sept 2026)* · SC-300 *(Planned)* · CISM *(Planned 2028–2029)*
+**B.S. Information Science, Information Security Concentration** · University of South Florida '23 · 3.76 GPA
+**Certifications:** CompTIA Security+ SY0-701 *(In Progress · Target: Sept 2026)* · SC-300 *(Planned)*
 
-> Targeting: **GRC Analyst · IT Compliance Analyst · Information Security Analyst**  
-> Specialization: Governance, Risk & Compliance · Identity & Access Governance · Security Policy Development · Audit Readiness
+> Targeting: **GRC Analyst · IT Compliance Analyst · Information Security Analyst · Solutions Engineer**
+> Specialization: Identity & Access Governance · Governance, Risk & Compliance · Security Policy Development · Audit Readiness
+
+---
+
+## ⚡ Live Product — Least by Juste™
+
+**I didn't just study access reviews. I built a product that automates them.**
+
+[Least by Juste™](https://app.getleast.io) is a live SaaS product I founded and built as CEO of Juste™ LLC — an access review automation tool for Google Workspace that generates SOC 2-aligned audit evidence for SMBs. It connects to Google Admin SDK via OAuth 2.0, ingests user/group/role data, runs a risk engine against SOC 2 CC6.x controls, and produces structured audit evidence.
+
+Every artifact in this portfolio reflects the governance frameworks and IAM controls that Least by Juste™ automates in production. This is not academic work — it's operational knowledge translated into a live product.
+
+**Stack:** Next.js · Python · FastAPI · Supabase · Google Admin SDK · OAuth 2.0 · Cron automation · SOC 2 CC6.x audit evidence generation
 
 ---
 
@@ -64,6 +75,8 @@ Practitioner-level control mapping across all six NIST CSF 2.0 functions to SOC 
 
 Audit-ready quarterly access review process with RBAC role-permission matrix (filled example: Acme Health Services), exception handling workflow, and evidence retention guidance. Templates mapped to SOC 2 CC6.3 compliance evidence requirements.
 
+> **In production:** Least by Juste™ automates this exact workflow for Google Workspace environments — connecting to Google Admin SDK, ingesting user/group/role data, and generating structured SOC 2 CC6.x audit evidence automatically.
+
 ---
 
 ### 4. Joiner–Mover–Leaver (JML) Lifecycle Controls
@@ -109,23 +122,33 @@ The controls, evidence patterns, and framework mappings in this portfolio reflec
 - **Dual-framework mapping** (NIST CSF + SOC 2) reduces redundant compliance work — one evidence artifact satisfies both frameworks where mappings exist.
 - **Access governance** (RBAC, JML, access reviews) directly addresses SOC 2 CC6 — the most commonly tested control category in Type II audits.
 - **Gap analysis** in the crosswalk reflects the kind of assessment a GRC Analyst performs when an organization wants to pursue SOC 2 attestation alongside an existing NIST-aligned security program.
+- **Least by Juste™** demonstrates that this governance knowledge is operational, not theoretical — it's been translated into a live product that automates the access review workflow end-to-end.
+
+---
+
+## Background
+
+12+ years of professional experience spanning enterprise SaaS sales and technical support (TeamViewer — SDR → ISR → Customer Support Specialist), identity and access governance, and hands-on product development. At TeamViewer, worked daily with SSO/SAML configurations, Conditional Access policies, MFA enforcement, 2FA troubleshooting, and compliance-adjacent enterprise customer environments — the same controls documented in this portfolio.
+
+Founded Juste™ LLC in March 2026. Currently pursuing GRC Analyst, Information Security Analyst, and Solutions Engineer roles while building Least by Juste™ to its first paying customers.
 
 ---
 
 ## Tools & Platforms
 
-`Microsoft Entra ID` `Okta` `Vanta` `Drata` `Microsoft Purview` `ServiceNow GRC` `Jira` `Zendesk` `Salesforce` `SAML/OAuth` `SIEM concepts`
+`Microsoft Entra ID` `Google Admin SDK` `Okta` `Vanta` `Drata` `Microsoft Purview` `ServiceNow GRC` `Jira` `Zendesk` `Salesforce` `SAML/OAuth 2.0` `SIEM concepts` `Python` `Next.js` `Supabase`
 
 ---
 
 ## Contact
 
-**Portfolio:** [career.usejuste.com](https://career.usejuste.com)  
-**LinkedIn:** [linkedin.com/in/kendersaintjuste](https://www.linkedin.com/in/kendersaintjuste)  
-**GitHub:** [github.com/KsaintJ](https://github.com/KsaintJ)  
-**Email:** ksaintjuste7@gmail.com  
+**Portfolio:** [career.usejuste.com](https://career.usejuste.com)
+**Live Product:** [app.getleast.io](https://app.getleast.io)
+**LinkedIn:** [linkedin.com/in/kendersaintjuste](https://www.linkedin.com/in/kendersaintjuste)
+**GitHub:** [github.com/KsaintJ](https://github.com/KsaintJ)
+**Email:** ksaintjuste7@gmail.com
 **Location:** Tampa, FL · Remote-First · Hybrid Available
 
 ---
 
-*GRC Analyst Portfolio · Kender Saint-Juste · Tampa, FL*
+*IAM/GRC Analyst Portfolio · Kender Saint-Juste · Tampa, FL · Updated July 2026*
