@@ -53,9 +53,9 @@ Every artifact in this portfolio reflects the governance frameworks and IAM cont
 ### 1. BYOD & Password Security Policy
 📁 [`policy-documents/`](./policy-documents/)
 
-Full cybersecurity policy written to a professional services organization environment. Identifies four risk conditions (V-01 through V-04), maps each to NIST CSF 2.0 controls, and documents regulatory compliance obligations across Florida Bar Rule 1.6(c), FIPA, HIPAA, and NIST SP 800-63B. Includes roles & responsibilities table, enforcement provisions, and audit evidence collection guidance mapped to SOC 2 TSC.
+Full cybersecurity policy written to a professional services organization environment. Identifies four risk conditions (V-01 through V-04), maps each to NIST CSF 2.0 controls, and documents regulatory compliance obligations across Florida Bar Rule 1.6(c), FIPA, HIPAA, and NIST SP 800-63B. Includes roles & responsibilities table, enforcement provisions, and audit evidence collection guidance mapped to SOC 2 CC6.1, CC6.2, CC6.3, and CC6.7.
 
-**Control areas covered:** BYOD governance · Password complexity (NIST SP 800-63B aligned) · MFA enforcement · Account lifecycle management & least privilege
+**Control areas covered:** BYOD governance · MDM enrollment & remote wipe · Password complexity (NIST SP 800-63B aligned) · MFA enforcement · Account lifecycle management & least privilege · RBAC · Quarterly access reviews · 24-hour deprovisioning SLA
 
 ---
 
