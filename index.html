@@ -182,7 +182,17 @@ footer{border-top:1px solid var(--border);padding:28px 5%;display:flex;justify-c
     <a href="#experience">Experience</a>
     <a href="#frameworks">Frameworks</a>
     <a href="resume.html" target="_blank">Resume</a>
-    <a href="#" class="nav-cta" onclick="downloadResume();return false;">Resume ↓</a>
+    <div class="nav-resume-dropdown" style="position:relative;display:inline-block;">
+      <a href="#" class="nav-cta" onclick="toggleResumeMenu(event);return false;">Resume ↓</a>
+      <div id="resumeMenu" style="display:none;position:absolute;right:0;top:110%;background:#0f1625;border:1px solid #1c2a40;border-radius:8px;min-width:240px;z-index:100;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+        <a href="#" onclick="downloadResume('grc');return false;" style="display:block;padding:12px 16px;color:#e2e8f0;font-size:13px;text-decoration:none;border-bottom:1px solid #1c2a40;" onmouseover="this.style.background='#161f32'" onmouseout="this.style.background='transparent'">
+          📄 GRC / InfoSec Analyst Resume
+        </a>
+        <a href="#" onclick="downloadResume('iam');return false;" style="display:block;padding:12px 16px;color:#e2e8f0;font-size:13px;text-decoration:none;" onmouseover="this.style.background='#161f32'" onmouseout="this.style.background='transparent'">
+          🔐 IAM / Identity Governance Resume
+        </a>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -437,12 +447,29 @@ footer{border-top:1px solid var(--border);padding:28px 5%;display:flex;justify-c
 </footer>
 
 <script>
-function downloadResume(){
-  const a=document.createElement('a');
-  a.href='KSJ_GRC_OnePage.pdf';
-  a.download='KSJ_GRC_OnePage.pdf';
-  a.click();
+function toggleResumeMenu(e){
+  e.stopPropagation();
+  const menu=document.getElementById('resumeMenu');
+  menu.style.display=menu.style.display==='none'?'block':'none';
 }
+
+function downloadResume(type){
+  const files={
+    'grc':{href:'Kender_Saint-Juste_GRC_InfoSec_Analyst.pdf',name:'Kender_Saint-Juste_GRC_InfoSec_Analyst.pdf'},
+    'iam':{href:'Kender_Saint-Juste_IAM_Analyst.pdf',name:'Kender_Saint-Juste_IAM_Analyst.pdf'}
+  };
+  const file=files[type]||files['grc'];
+  const a=document.createElement('a');
+  a.href=file.href;
+  a.download=file.name;
+  a.click();
+  document.getElementById('resumeMenu').style.display='none';
+}
+
+document.addEventListener('click',function(){
+  const menu=document.getElementById('resumeMenu');
+  if(menu)menu.style.display='none';
+});
 
 // Scroll-triggered fade-in
 const observer=new IntersectionObserver((entries)=>{
